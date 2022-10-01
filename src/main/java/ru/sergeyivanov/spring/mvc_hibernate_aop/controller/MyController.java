@@ -19,10 +19,10 @@ public class MyController {
     public String allEmployees(Model model){
 
         List<Employee> allEmployees = employeeDAO.getAllEmployees();
-        model.addAttribute("AllEmps", allEmployees);
+        model.addAttribute("allEmps", allEmployees);
 
-//        return "all-employees";
-        return "ttt";
+        return "all-employees";
+//        return "ttt";
     }
 
     @RequestMapping("/ttt")
