@@ -6,6 +6,9 @@
 
 <br>
 <form:form action="saveEmployee" modelAttribute="employee">
+<%--this field is not reflected and using onle when /updateInfo --%>
+    <form:hidden path="id"/>
+
     Name <form:input path="name"/>
     <br><br>
     Surname <form:input path="surname"/>
@@ -14,7 +17,7 @@
     <br><br>
     Salary <form:input path="salary"/>
     <br><br>
-    <input type="button" value="Ok">
+    <input type="submit" value="Ok">
 </form:form>
 
 </body>
