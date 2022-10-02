@@ -27,10 +27,19 @@ public class MyController {
         return "all-employees";
     }
 
-    @RequestMapping("addNewEmployee")
+    @RequestMapping("/addNewEmployee")
     public String addNewEmployee(Model model){
 
         Employee employee = new Employee();
+        model.addAttribute("employee", employee);
+
+        return "employee-info";
+    }
+
+    @RequestMapping("/updateInfo")
+    public String updateEmployee(@RequestParam("empId") int id, Model model){
+
+        Employee employee = employeeService.getEmployee(id);
         model.addAttribute("employee", employee);
 
         return "employee-info";
@@ -44,12 +53,9 @@ public class MyController {
         return "redirect:/";
     }
 
-    @RequestMapping("/updateInfo")
-    public String updateEmployee(@RequestParam("empId") int id, Model model){
-
-        Employee employee = employeeService.getEmployee(id);
-        model.addAttribute("employee", employee);
-
-        return "employee-info";
+    @RequestMapping("/deleteEmployee")
+    public String DeleteEmployee(@RequestParam("empId") int id){
+        employeeService.deleteEmployee(id);
+        return "redirect:/";
     }
 }

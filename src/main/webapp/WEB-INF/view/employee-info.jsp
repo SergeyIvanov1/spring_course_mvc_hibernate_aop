@@ -6,9 +6,10 @@
 
 <br>
 <form:form action="saveEmployee" modelAttribute="employee">
-<%--this field is not reflected and using onle when /updateInfo --%>
+<%--this field is not reflected and using only when /updateInfo --%>
     <form:hidden path="id"/>
 
+<%--    all fields filling with halp GETTERS. After press "Ok" button worked SETTERS--%>
     Name <form:input path="name"/>
     <br><br>
     Surname <form:input path="surname"/>
